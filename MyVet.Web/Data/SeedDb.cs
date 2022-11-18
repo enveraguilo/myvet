@@ -150,7 +150,7 @@ namespace MyVet.Web.Data
                             {
                                 _dataContext.Agendas.Add(new Agenda
                                 {
-                                    Date = initialDate,
+                                    Date = initialDate.ToUniversalTime(),
                                     IsAvailable = true
                                 });
 
