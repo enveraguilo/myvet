@@ -114,9 +114,12 @@ namespace MyVet.Web.Helpers
             return await _userManager.UpdateAsync(user);
         }
 
-        public Task<SignInResult> ValidatePasswordAsync(User user, string password)
+        public async Task<SignInResult> ValidatePasswordAsync(User user, string password)
         {
-            throw new System.NotImplementedException();
+            return await _signInManager.CheckPasswordSignInAsync(
+                user,
+                password,
+                false);
         }
     }
 }
